@@ -1,1 +1,6 @@
-alert("JavaScript works!");
+// alert("JavaScript works!");
+
+var stringPhone = function () {
+
+
+}
