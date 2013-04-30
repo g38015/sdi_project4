@@ -11,21 +11,50 @@
 
 // Function 1
 // Does a string follow a 123-456-7890 pattern like a phone number?
-var stringPhone = function () {
+var stringPhone = function (checkNUmber) {
+		var phoneNumber = checkNumber 
+		if () {
+
+			console.log();
+
+		} else {
+
+			console.log();
+		}
 
 
 };
 
 // Function 2
 // Does a string follow an aaa@bbb.ccc pattern like an email address?
-var stringEmail = function () {
+var stringEmail = function (checkEmail) {
+		var email = checkEmail
+		if () {
+
+				console.log();
+
+		} else {
+
+				console.log();
+
+		}
 
 
 };
 
 // Function 3
 // Is the string a URL? (Does it start with http: or https:?).
-var stringUrl = function () {
+var stringUrl = function (checkUrl) {
+		var url = checkUrl
+		if () {
+
+			console.log();
+
+		} else {
+
+			console.log();
+			
+		}
 
 
 };
