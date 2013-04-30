@@ -53,7 +53,7 @@ var stringUrl = function (checkUrl) {
 		} else {
 
 			console.log();
-			
+
 		}
 
 
@@ -61,8 +61,8 @@ var stringUrl = function (checkUrl) {
 
 // Function 4
 // Title-case a string (split into words, then uppercase the first letter of each word).
-var stringTitle = function () {
-
+var stringTitle = function (stringTitle) {
+		var split = stringTitle
 
 };
 
