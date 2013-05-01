@@ -92,10 +92,12 @@ var numberLibrary = function () {
 
 			// Function 6
 			// Format a number to use a specific number of decimal places, as for money: 2.1 → 2.10.
-//			var numDecimal = function () {
+			var numDecimal = function (val) {
+					decimalPlaces = val.toFixed(3);
+					return decimalPlaces;
 
 
-//			};
+			};
 /*
 // Function 7
 // Fuzzy-match a number: is the number above or below a number within a certain percent?
@@ -114,8 +116,8 @@ var numDates = function () {
 		// Function 9
 		// Given a string version of a number such as "42", return the value as an actual Number, such as 42.
 		var parseString = function (val) {
-			pString = val;
-			return parseInt(pString);
+				pString = val;
+				return parseInt(pString);
 
 
 			
@@ -125,6 +127,7 @@ var numDates = function () {
 
 			return {
 						//	"numDecimal": numDecimal
+							"numDecimal": numDecimal,
 							"parseString": parseString
 
 			}
@@ -171,6 +174,8 @@ var url = "http//www.test.com";
 console.log("Url is " + sLib.stringUrl(url));
 // Number Libraray
 var nLib = numberLibrary();
+var moveDecimal = 3.1;
+console.log("Moved to " + nLib.numDecimal(moveDecimal));
 var parseTest = "34";
 console.log("Return Number" + nLib.parseString(parseTest));
 //var aLib = arrayLibrary();
