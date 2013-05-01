@@ -46,9 +46,13 @@ var stringLibrary = function () {
 		// Is the string a URL? (Does it start with http: or https:?).
 		var stringUrl = function (arg) {
 				var url = arg;
-				if (url.substring(0,7) == "http://" || url.substring(0,8) == "https://") {
-						return true;
+				if (url.substring(0,7) === "http://" || url.substring(0,8) === "https://") {
+							
+							return true;
+				
+				} else {
 
+							return false;
 				}
 
 		};
@@ -88,8 +92,8 @@ var numberLibrary = function () {
 						return pString;
 				}
 				
-
 		};
+
 
 			return {
 
@@ -105,17 +109,15 @@ var arrayLibrary = function () {
 	
 		// Function 10
 		// Find the smallest value in an array that is greater than a given number.
-		var arrValue = function (arg) {
-					var arrMin = arg[1];
-					for (i = 0; i < arg.length; i++) {
-							if (arg[i] < arrMin) {
-								return arrMin;
+		var arrValue = function (arg, arrayArg) {
+					var numArg = arg;
+					var sArray = arrayArg;
+					for (i = 0; i <= sArray.length; i++) {
+							if (sArray[i] > numArg) {
+								return sArray[i];
 							}
-
 					}
-
 		};
-
 
 		// Function 11
 		// Find the total value of just the numbers in an array, even if some of the items are not numbers.
@@ -124,20 +126,21 @@ var arrayLibrary = function () {
 				var total = 0;
 				for (i = 0; i < totalArray.length; i++) {
 						if (isNaN(totalArray[i]) === false) {
-								return total + totalArray[i];
+								var total = total + totalArray[i];
 						}
 				}
 
+				return total;
 		};
+
 
 		return {
 
 							"arrValue": arrValue,
 							"numArray": numArray
-			}
+		}
 
 };
-
 
 // String Library
 var sLib = stringLibrary();
@@ -145,19 +148,19 @@ var phoneString = "123-4567";
 console.log("Dash is " + sLib.stringPhone(phoneString));
 var emailString = "test@test.com";
 console.log("email is " + sLib.stringEmail(emailString));
-var url = "http//www.test.com";
-console.log("Url is " + sLib.stringUrl(url));
+var url = "http://www.test.com";
+console.log("This is a valid URL? " + sLib.stringUrl(url));
 
 // Number Libraray
 var nLib = numberLibrary();
 var moveDecimal = 3.5678;
-console.log("Moved to " + nLib.numDecimal(moveDecimal));
+console.log("Moved Decimal: " + nLib.numDecimal(moveDecimal));
 var parseTest = "34";
-console.log("Return Number " + nLib.parseString(parseTest));
+console.log("Return Actual Number: " + nLib.parseString(parseTest));
 
 // Array Library
 var aLib = arrayLibrary();
-var smallArray = [4,34,66,2,9,1];
-console.log("Here it is " + aLib.arrValue(smallArray));
+var smallArray = [4,66,2,9,1,43];
+console.log("Smallest Value: " + aLib.arrValue(3, smallArray));
 var arrayTest = ["String", 10, "String 2", 20];
-console.log("Test Number " + aLib.numArray(arrayTest));
+console.log("Total Value: " + aLib.numArray(arrayTest));
