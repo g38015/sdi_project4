@@ -42,7 +42,6 @@ var stringLibrary = function () {
 				}
 				
 
-
 		};
 
 		// Function 3
@@ -54,34 +53,16 @@ var stringLibrary = function () {
 
 				}
 
-				
-
 
 		};
 
-/*
-// Function 4
-// Title-case a string (split into words, then uppercase the first letter of each word).
-var stringTitle = function (stringTitle) {
-		var split = stringTitle
 
-};
-
-// Function 5
-// Given a string that is a list of things separated by a given string, as well as another string separator, return a string with the first separator changed to the second: "a,b,c" + "," + "/" → "a/b/c".
-var stringSeparator = function () {
-
-
-};
-*/
 			return {
 							"stringPhone": stringPhone,
 							"stringEmail": stringEmail,
 							"stringUrl": stringUrl
 
-
-
-			};
+			}
 
 };
 
@@ -96,32 +77,13 @@ var numberLibrary = function () {
 					decimalPlaces = val.toFixed(3);
 					return decimalPlaces;
 
-
 			};
-/*
-// Function 7
-// Fuzzy-match a number: is the number above or below a number within a certain percent?
-var numFuzzy = function () {
 
-
-};
-
-// Function 8
-// Find the number of hours or days difference between two dates.
-var numDates = function () {
-
-
-};
-*/
 		// Function 9
 		// Given a string version of a number such as "42", return the value as an actual Number, such as 42.
 		var parseString = function (val) {
 				pString = val;
 				return parseInt(pString);
-
-
-			
-
 
 		};
 
@@ -129,53 +91,51 @@ var numDates = function () {
 						//	"numDecimal": numDecimal
 							"numDecimal": numDecimal,
 							"parseString": parseString
+			}
+};
 
+// Array Library
+
+var arrayLibrary = function () {
+	
+
+		// Function 10
+		// Find the smallest value in an array that is greater than a given number.
+		var arrValue = function (val) {
+					arrMin = val[0];
+					for (i = 0; i < val.length; i++) {
+							if (val[i] < arrMin) {
+								arrMin = val[i];
+							}
+					}
+
+					return arrMin;
+		};
+
+
+			return {
+
+							"arrValue": arrValue
 			}
 
 };
 
-/*
-// Array Library
-
-var arrayLibrary = fucntion () {
-	
-/*
-// Function 10
-// Find the smallest value in an array that is greater than a given number.
-var arrValue = function () {
-
-
-};
-
-// Function 11
-// Find the total value of just the numbers in an array, even if some of the items are not numbers.
-var arrTotal = function () {
-
-
-};
-
-// Function 12
-// Given an array of objects and the name of a key, return the array sorted by the value of that key in each of the objects: "a" + [{a:2},{a:3},{a:1}] → [{a:1},{a:2},{a:3}].
-var arrSorted = function () {
-
-
-};
-
-}:
-*/
 
 // String Library
 var sLib = stringLibrary();
 var phoneString = "123-4567";
-console.log("Dash is" + sLib.stringPhone(phoneString));
+console.log("Dash is " + sLib.stringPhone(phoneString));
 var emailString = "test@test.com";
-console.log("email is" + sLib.stringEmail(emailString));
+console.log("email is " + sLib.stringEmail(emailString));
 var url = "http//www.test.com";
 console.log("Url is " + sLib.stringUrl(url));
 // Number Libraray
 var nLib = numberLibrary();
-var moveDecimal = 3.1;
+var moveDecimal = 3.5678;
 console.log("Moved to " + nLib.numDecimal(moveDecimal));
 var parseTest = "34";
-console.log("Return Number" + nLib.parseString(parseTest));
-//var aLib = arrayLibrary();
+console.log("Return Number " + nLib.parseString(parseTest));
+// Array Library
+var aLib = arrayLibrary();
+var smallArray = [4,34,66,2,9];
+console.log("Here it is " + aLib.arrValue(smallArray));
