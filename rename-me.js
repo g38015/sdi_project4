@@ -27,24 +27,24 @@ var stringLibrary = function () {
 
 
 		};
+
+		// Function 2
+		// Does a string follow an aaa@bbb.ccc pattern like an email address?
+		var stringEmail = function (val) {
+
+				var strLen = val.length;
+
+				for(var i=0; i <= strLen; i++) {
+						if (val.substring(i, i+1) === "@") {
+								return i;
+						}
+
+				}
+				
+
+
+		};
 /*
-// Function 2
-// Does a string follow an aaa@bbb.ccc pattern like an email address?
-var stringEmail = function (checkEmail) {
-		var email = checkEmail
-		if () {
-
-				console.log();
-
-		} else {
-
-				console.log();
-
-		}
-
-
-};
-
 // Function 3
 // Is the string a URL? (Does it start with http: or https:?).
 var stringUrl = function (checkUrl) {
@@ -77,7 +77,8 @@ var stringSeparator = function () {
 };
 */
 			return {
-							"stringPhone": stringPhone
+							"stringPhone": stringPhone,
+							"stringEmail": stringEmail
 
 
 
@@ -86,15 +87,17 @@ var stringSeparator = function () {
 };
 
 /*
-// Number Functions
+// Number Library
 
-// Function 6
-// Format a number to use a specific number of decimal places, as for money: 2.1 → 2.10.
-var numDecimal = function () {
+var numberLibrary = function () {
+
+			// Function 6
+			// Format a number to use a specific number of decimal places, as for money: 2.1 → 2.10.
+			var numDecimal = function () {
 
 
-};
-
+			};
+/*
 // Function 7
 // Fuzzy-match a number: is the number above or below a number within a certain percent?
 var numFuzzy = function () {
@@ -116,8 +119,18 @@ var numNumber = function () {
 
 };
 
-// Array Functions
+			return {
+							"numDecimal": numDecimal
 
+			}
+
+};
+
+
+// Array Library
+
+var arrayLibrary = fucntion () {
+/*
 // Function 10
 // Find the smallest value in an array that is greater than a given number.
 var arrValue = function () {
@@ -138,8 +151,14 @@ var arrSorted = function () {
 
 
 };
-*/
-var sLib = stringLibrary();
-var myString = "123-4567";
-console.log("Dash is" + sLib.stringPhone(myString));
 
+}:
+*/
+
+var sLib = stringLibrary();
+var phoneString = "123-4567";
+console.log("Dash is" + sLib.stringPhone(phoneString));
+var emailString = "test@test.com";
+console.log("email is" + sLib.stringEmail(emailString));
+//var nLib = numberLibrary();
+//var aLib = arrayLibrary();
