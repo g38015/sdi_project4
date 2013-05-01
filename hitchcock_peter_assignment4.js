@@ -80,7 +80,9 @@ var numberLibrary = function () {
 		var parseString = function (arg) {
 				var pString = parseInt(arg);
 				if (isNaN(pString)) {
-						console.log("whoops");
+
+						return false;
+
 				} else {
 
 						return pString;
@@ -107,18 +109,31 @@ var arrayLibrary = function () {
 					var arrMin = arg[1];
 					for (i = 0; i < arg.length; i++) {
 							if (arg[i] < arrMin) {
-								arrMin = arg[i];
+								return arrMin;
 							}
 
 					}
 
-					return arrMin;
 		};
 
 
-			return {
+		// Function 11
+		// Find the total value of just the numbers in an array, even if some of the items are not numbers.
+		var numArray = function (arg) {
+				var totalArray = arg;
+				var total = 0;
+				for (i = 0; i < totalArray.length; i++) {
+						if (isNaN(totalArray[i]) === false) {
+								return total + totalArray[i];
+						}
+				}
 
-							"arrValue": arrValue
+		};
+
+		return {
+
+							"arrValue": arrValue,
+							"numArray": numArray
 			}
 
 };
@@ -144,3 +159,5 @@ console.log("Return Number " + nLib.parseString(parseTest));
 var aLib = arrayLibrary();
 var smallArray = [4,34,66,2,9,1];
 console.log("Here it is " + aLib.arrValue(smallArray));
+var arrayTest = ["String", 10, "String 2", 20];
+console.log("Test Number " + aLib.numArray(arrayTest));
