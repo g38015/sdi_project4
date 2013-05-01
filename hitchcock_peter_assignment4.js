@@ -13,12 +13,12 @@ var stringLibrary = function () {
 
 		// Function 1
 		// Does a string follow a 123-456-7890 pattern like a phone number?
-		var stringPhone = function (val) {
+		var stringPhone = function (arg) {
 
-				var strLen = val.length;
+				var strLen = arg.length;
 
 				for(var i=0; i <= strLen; i++) {
-						if (val.substring(i, i+1) === "-") {
+						if (arg.substring(i, i+1) === "-") {
 								return i;
 
 						}
@@ -29,12 +29,12 @@ var stringLibrary = function () {
 
 		// Function 2
 		// Does a string follow an aaa@bbb.ccc pattern like an email address?
-		var stringEmail = function (val) {
+		var stringEmail = function (arg) {
 
-				var strLen = val.length;
+				var strLen = arg.length;
 
 				for(var i=0; i <= strLen; i++) {
-						if (val.substring(i, i+1) === "@") {
+						if (arg.substring(i, i+1) === "@") {
 								return i;
 						}
 
@@ -44,8 +44,8 @@ var stringLibrary = function () {
 
 		// Function 3
 		// Is the string a URL? (Does it start with http: or https:?).
-		var stringUrl = function (val) {
-				var url = val;
+		var stringUrl = function (arg) {
+				var url = arg;
 				if (url.substring(0,7) == "http://" || url.substring(0,8) == "https://") {
 						return true;
 
@@ -54,6 +54,7 @@ var stringLibrary = function () {
 		};
 
 			return {
+
 							"stringPhone": stringPhone,
 							"stringEmail": stringEmail,
 							"stringUrl": stringUrl
@@ -68,22 +69,28 @@ var numberLibrary = function () {
 
 			// Function 6
 			// Format a number to use a specific number of decimal places, as for money: 2.1 → 2.10.
-			var numDecimal = function (val) {
-					decimalPlaces = val.toFixed(3);
+			var numDecimal = function (arg) {
+					var decimalPlaces = arg.toFixed(3);
 					return decimalPlaces;
 
 			};
 
 		// Function 9
 		// Given a string version of a number such as "42", return the value as an actual Number, such as 42.
-		var parseString = function (val) {
-				pString = val;
-				return parseInt(pString);
+		var parseString = function (arg) {
+				var pString = parseInt(arg);
+				if (isNaN(pString)) {
+						console.log("whoops");
+				} else {
+
+						return pString;
+				}
+				
 
 		};
 
 			return {
-						//	"numDecimal": numDecimal
+
 							"numDecimal": numDecimal,
 							"parseString": parseString
 			}
@@ -96,11 +103,11 @@ var arrayLibrary = function () {
 	
 		// Function 10
 		// Find the smallest value in an array that is greater than a given number.
-		var arrValue = function (val) {
-					arrMin = val[1];
-					for (i = 0; i < val.length; i++) {
-							if (val[i] < arrMin) {
-								arrMin = val[i];
+		var arrValue = function (arg) {
+					var arrMin = arg[1];
+					for (i = 0; i < arg.length; i++) {
+							if (arg[i] < arrMin) {
+								arrMin = arg[i];
 							}
 
 					}
