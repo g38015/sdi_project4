@@ -5,26 +5,29 @@
 // April 29, 2013
 // Project 4
 
-// Library
+// Librarys
 
-// String Functions 
+// String Library
 
-// Function 1
-// Does a string follow a 123-456-7890 pattern like a phone number?
-var stringPhone = function (checkNUmber) {
-		var phoneNumber = checkNumber 
-		if () {
+var stringLibrary = function () {
 
-			console.log();
+		// Function 1
+		// Does a string follow a 123-456-7890 pattern like a phone number?
+		var stringPhone = function (val) {
 
-		} else {
+				var strLen = val.length;
 
-			console.log();
-		}
+				for(var i=0; i <= strLen; i++) {
+						if (val.substring(i, i+1) === "-") {
+								return i;
+
+						}
+
+				}
 
 
-};
-
+		};
+/*
 // Function 2
 // Does a string follow an aaa@bbb.ccc pattern like an email address?
 var stringEmail = function (checkEmail) {
@@ -72,7 +75,17 @@ var stringSeparator = function () {
 
 
 };
+*/
+			return {
+							"stringPhone": stringPhone
 
+
+
+			};
+
+};
+
+/*
 // Number Functions
 
 // Function 6
@@ -125,5 +138,8 @@ var arrSorted = function () {
 
 
 };
-
+*/
+var sLib = stringLibrary();
+var myString = "123-4567";
+console.log("Dash is" + sLib.stringPhone(myString));
 
