@@ -11,34 +11,39 @@
 
 var stringLibrary = function () {
 
-		// Function 1
-		// Does a string follow a 123-456-7890 pattern like a phone number?
-		var stringPhone = function (arg) {
-
-				var strLen = arg.length;
-
-				for(var i=0; i <= strLen; i++) {
-						if (arg.substring(i, i+1) === "-") {
-								return i;
-
-						}
-
-				}
-
-		};
 
 		// Function 2
 		// Does a string follow an aaa@bbb.ccc pattern like an email address?
 		var stringEmail = function (arg) {
 
-				var strLen = arg.length;
+			var email = arg;
+			checkPos = email.indexOf("@");
+			stopPos = email.lastIndexOf(".");
 
-				for(var i=0; i <= strLen; i++) {
-						if (arg.substring(i, i+1) === "@") {
-								return i;
-						}
+			if (email == "") {
 
-				}
+					return false;
+			}
+
+			if (checkPos == -1 || stopPos == -1) {
+
+					return false;
+			}
+
+			if (stopPos < checkPos) {
+
+					return false;
+			}
+
+			if (stopPos - checkPos == 1) {
+
+					return false;
+			}
+
+			else {
+
+					return true;
+			}
 				
 		};
 
@@ -59,7 +64,6 @@ var stringLibrary = function () {
 
 			return {
 
-							"stringPhone": stringPhone,
 							"stringEmail": stringEmail,
 							"stringUrl": stringUrl
 
@@ -117,7 +121,7 @@ var arrayLibrary = function () {
 							}
 					}
 
-					smallestVal = largestVal[0];
+					var smallestVal = largestVal[0];
 
 					for (j = 0; j < largestVal.length; j++) {
 							if (smallestVal > largestVal[j]) {
@@ -152,10 +156,8 @@ var arrayLibrary = function () {
 
 // String Library
 var sLib = stringLibrary();
-var phoneString = "123-4567";
-console.log("Dash is " + sLib.stringPhone(phoneString));
 var emailString = "test@test.com";
-console.log("email is " + sLib.stringEmail(emailString));
+console.log("Is this a valid email address? " + sLib.stringEmail(emailString));
 var url = "http://www.test.com";
 console.log("This is a valid URL? " + sLib.stringUrl(url));
 
