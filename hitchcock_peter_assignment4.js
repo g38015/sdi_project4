@@ -5,7 +5,7 @@
 // April 29, 2013
 // Project 4
 
-// Librarys
+// Javascript Library
 
 // String Library
 
@@ -73,8 +73,8 @@ var numberLibrary = function () {
 
 			// Function 6
 			// Format a number to use a specific number of decimal places, as for money: 2.1 → 2.10.
-			var numDecimal = function (arg) {
-					var decimalPlaces = arg.toFixed(3);
+			var numDecimal = function (arg, decimal) {
+					var decimalPlaces = arg.toFixed(decimal);
 					return decimalPlaces;
 
 			};
@@ -153,8 +153,9 @@ console.log("This is a valid URL? " + sLib.stringUrl(url));
 
 // Number Libraray
 var nLib = numberLibrary();
-var moveDecimal = 3.5678;
-console.log("Moved Decimal: " + nLib.numDecimal(moveDecimal));
+var moveDecimal = 3.567895;
+var places = 4;
+console.log("Moved Decimal: " + nLib.numDecimal(moveDecimal, places));
 var parseTest = "34";
 console.log("Return Actual Number: " + nLib.parseString(parseTest));
 
