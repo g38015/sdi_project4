@@ -18,9 +18,15 @@ var stringLibrary = function () {
 
 			var email = arg;
 			checkPos = email.indexOf("@");
+			whiteSpace = email.indexOf(" ");
 			stopPos = email.lastIndexOf(".");
 
 			if (email == "") {
+
+					return false;
+			}
+
+			if (whiteSpace >= 0) {
 
 					return false;
 			}
@@ -30,7 +36,7 @@ var stringLibrary = function () {
 					return false;
 			}
 
-			if (stopPos < checkPos) {
+			if (stopPos < checkPos ) {
 
 					return false;
 			}
@@ -115,6 +121,7 @@ var arrayLibrary = function () {
 		// Find the smallest value in an array that is greater than a given number.
 		var arrValue = function (arg, arrayArg) {
 					var largestVal = [];
+					
 					for (i = 0; i < arrayArg.length; i++){
 							if (arrayArg[i] < arg) {
 								largestVal.push(arrayArg[i]);
@@ -159,7 +166,7 @@ var sLib = stringLibrary();
 var emailString = "test@test.com";
 console.log("Is this a valid email address? " + sLib.stringEmail(emailString));
 var url = "http://www.test.com";
-console.log("This is a valid URL? " + sLib.stringUrl(url));
+console.log("Ths is a valid URL? " + sLib.stringUrl(url));
 
 // Number Libraray
 var nLib = numberLibrary();
@@ -172,7 +179,7 @@ console.log("Return Actual Number: " + nLib.parseString(parseTest));
 // Array Library
 var aLib = arrayLibrary();
 var smallArray = [4,66,2,9,43];
-var argNum = 15;
+var argNum = 12;
 console.log("Smallest Value: " + aLib.arrValue(argNum, smallArray));
 var arrayTest = ["String", 10, "String 2", 20];
 console.log("Total Value: " + aLib.numArray(arrayTest));
