@@ -110,13 +110,21 @@ var arrayLibrary = function () {
 		// Function 10
 		// Find the smallest value in an array that is greater than a given number.
 		var arrValue = function (arg, arrayArg) {
-					var numArg = arg;
-					var sArray = arrayArg;
-					for (i = 0; i <= sArray.length; i++) {
-							if (sArray[i] > numArg) {
-								return sArray[i];
+					var largestVal = [];
+					for (i = 0; i < arrayArg.length; i++){
+							if (arrayArg[i] < arg) {
+								largestVal.push(arrayArg[i]);
 							}
 					}
+
+					smallestVal = largestVal[0];
+
+					for (j = 0; j < largestVal.length; j++) {
+							if (smallestVal > largestVal[j]) {
+								smallestVal = largestVal[j];
+							}
+					}
+					return smallestVal;
 		};
 
 		// Function 11
@@ -161,7 +169,8 @@ console.log("Return Actual Number: " + nLib.parseString(parseTest));
 
 // Array Library
 var aLib = arrayLibrary();
-var smallArray = [4,66,2,9,1,43];
-console.log("Smallest Value: " + aLib.arrValue(3, smallArray));
+var smallArray = [4,66,2,9,43];
+var argNum = 15;
+console.log("Smallest Value: " + aLib.arrValue(argNum, smallArray));
 var arrayTest = ["String", 10, "String 2", 20];
 console.log("Total Value: " + aLib.numArray(arrayTest));
